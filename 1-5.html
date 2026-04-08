@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Whether leap year</title>
+
+</head>
+<body>
+ <p id="target1"></p>
+ <p id="target2"></p>
+    <script>
+       const year  =parseInt(prompt("Please enter a number of year: "));
+
+       if ((year % 4 === 0 && year % 100 !== 0) || (year % 400===0))
+       {
+          console.log("This year is a leap year.")
+          document.querySelector('#target1').innerHTML = year + " is a leap year.";
+       }
+       else
+       {
+           console.log("This year is not a leap year.")
+           document.querySelector('#target2').innerHTML = year + " is not a leap year.";
+
+       }
+
+    </script>
+</body>
+</html>

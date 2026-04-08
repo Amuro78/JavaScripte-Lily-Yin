@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Square root</title>
+</head>
+
+<body>
+<p id="target1"></p>
+<p id="target2"></p>
+
+<script>
+const question = confirm("Should I calculate the square root?")
+let a,square_root
+a= parseInt(prompt("Please enter a number:"))
+square_root= Math.sqrt(a)
+final = Math.floor(square_root * 100) / 100
+
+if (question === true){
+    if (a>=0){
+        document.querySelector('#target1').innerHTML = "The square root is " + final;
+    }
+    else if (a<0){
+        document.querySelector('#target1').innerHTML = "The square root of a negative number is not defined. ";
+    }
+
+    else{
+        document.querySelector('#target1').innerHTML = "You haven't enter the number. ";
+    }
+
+}
+
+
+else {
+    document.querySelector('#target2').innerHTML = "The square root is not calculated.";
+}
+
+</script>
+
+</body>
+</html>

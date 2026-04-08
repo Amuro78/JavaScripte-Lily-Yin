@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module 1-3</title>
+</head>
+
+<body>
+<h1>Greeting</h1>
+<p id="target1"></p>
+<p id="target2"></p>
+<p id="target3"></p>
+
+<script>
+    'use strict';
+    let a,b,c,sum,product,average
+    a = parseInt(prompt("First number:"))
+    b = parseInt(prompt("Second number:"))
+    c = parseInt(prompt("Third number:"))
+    sum = a+b+c
+    console.log(sum);
+    product = a*b*c
+    console.log(product);
+    average = (a+b+c)/3
+    console.log(average);
+    console.log(typeof a,b,c);
+     document.querySelector('#target1').innerHTML = 'sum:' + sum;
+     document.querySelector('#target2').innerHTML = 'product:' + product;
+     document.querySelector('#target3').innerHTML = 'average:' + average;
+
+</script>
+</body>
+
+</html>

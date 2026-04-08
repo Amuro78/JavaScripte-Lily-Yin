@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="target1"></p>
+<script>
+    let prime_number;
+
+    prime_number = parseInt(prompt("Please enter a number:"));
+
+    if (prime_number <=1 ){
+        document.querySelector('#target1').innerHTML = prime_number + " is not a prime number.";
+    }
+
+    else if(prime_number<=3){
+        document.querySelector('#target1').innerHTML = prime_number + " is a prime number."
+    }
+
+    else if(prime_number % 2===0 || prime_number % 3 === 0){
+        document.querySelector('#target1').innerHTML = prime_number + " is not a prime number."
+    }
+
+    else {
+        let is_Prime = true;
+        let i = 5;
+        while (i * i <= prime_number) {
+            if (prime_number % i === 0 || prime_number % (i + 2) === 0) {
+                is_Prime = false;
+                break;
+            }
+            i += 6;
+        }
+
+
+        if (is_Prime) {
+            document.querySelector('#target1').innerHTML = prime_number + " is a prime number."
+        } else {
+            document.querySelector('#target1').innerHTML = prime_number + " is not a prime number."
+        }
+    }
+
+</script>
+
+</body>
+</html>

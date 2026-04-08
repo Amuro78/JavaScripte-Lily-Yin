@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="target1"></p>
+<script>
+    let start, end;
+    start = parseInt(prompt("Please enter the start year:"));
+    end = parseInt(prompt("Please enter the end year:"));
+
+    if (isNaN(start) || isNaN(end) || start > end) {
+        document.querySelector('#target1').innerHTML = "Please enter valid number!";
+    } else {
+        let leapYears = [];
+
+
+        for (let i = start; i <= end; i++) {
+            if ((i % 4 === 0 && i % 100 !== 0) || (i % 400 === 0)) {
+                leapYears.push(i);
+            }
+        }
+
+        let html = "<ul>";
+        for (let i of leapYears) {
+            html += `<li>${i}</li>`;
+        }
+        html += "</ul>";
+        document.querySelector('#target1').innerHTML = html;
+    }
+</script>
+
+</body>
+</html>

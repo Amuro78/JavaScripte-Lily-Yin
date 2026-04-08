@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="target1"></p>
+<p id="target2"></p>
+
+<script>
+    let times=parseInt(prompt("Please enter the times you want: "))
+
+    if (isNaN(times) || times<= 0){
+        document.querySelector("#target1").innerHTML= "Please enter a valid number."
+    }
+    else{
+        let sum=0
+    for (let i = 0; i < times; i++) {
+         let dice = Math.floor(Math.random()*6)+1;
+         sum += dice;
+    }
+       document.querySelector("#target2").innerHTML="The total is " + sum
+    }
+
+
+</script>
+
+</body>
+</html>
