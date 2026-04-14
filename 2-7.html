@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id ="result"></p>
+<script>
+  let side=parseInt(prompt("Please enter the side:"))
+    function rolldice(){
+        return Math.floor(Math.random()*side)+1;
+    }
+
+    function  Side(){
+        let results = [];
+
+
+        while(true){
+            let roll = rolldice();
+            results.push(roll);
+            if (roll === side)
+               break;
+
+    }
+        let html = "<ul>";
+        for (let i = 0; i < results.length; i++) {
+            html += `<li>${results[i]}</li>`;
+        }
+        html += "</ul>";
+         document.querySelector('#result').innerHTML = html;
+         }
+
+         Side()
+
+</script>
+</body>
+</html>

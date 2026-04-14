@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    names=[]
+    const partici_num = parseInt(prompt("Please enter the quantity of participant:"));
+    for (let i=0; i< partici_num ; i++){
+        names[i] = prompt("Please enter the name:")
+        names.sort();
+
+        let html = "<ol>";
+        for (let i=0; i< names.length; i++){
+            html +="<li>"+ names[i] + "</li>";
+        }
+        html +="</ol>";
+        document.getElementById("result").innerHTML = html;
+    }
+
+
+</script>
+</body>
+</html>

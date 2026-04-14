@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result1"></p>
+<script>
+    const numbers = []
+
+    for (let i = 0; i <= 4; i++) {
+        numbers[i] = prompt('Enter your number:');
+        console.log(`Number: ${numbers[i]}`);
+    }
+
+
+    console.log("Reserved:");
+    for (let i = numbers.length - 1; i >= 0; i--) {
+        console.log(`Number: ${numbers[i]}`);
+    }
+</script>
+</body>
+</html>

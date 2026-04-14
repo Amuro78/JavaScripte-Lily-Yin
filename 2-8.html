@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id ="result"></p>
+<script>
+    function concat(string){
+        let result = "";
+        for(let i=0; i<string.length; i++){
+            result += string[i]
+        }
+        return result;
+    }
+
+    const items = ["Johnny","DeeDee","Joey","Marky"]
+    const strings = concat(items);
+
+    document.querySelector('#result').innerHTML = strings;
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    let numbers=[]
+    while(true){
+      let num = parseInt(prompt("Please enter the number (enter 0 to end)"))
+
+      if (isNaN(num))
+        alert("Please enter valid number!")
+
+      if (num === 0){
+        break
+      }
+      numbers.push(num);
+      numbers.sort((a ,b)=> b - a)
+     console.log("Result: ");
+    for (let i=0; i<numbers.length; i++){
+      console.log(numbers[i]);
+    }
+    }
+
+
+
+
+</script>
+</body>
+</html>

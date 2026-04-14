@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id ="result"></p>
+<script>
+    function rolldice(){
+        return Math.floor(Math.random()*6)+1;
+    }
+
+    function  six(){
+        let results = [];
+
+
+        while(true){
+            let roll = rolldice();
+            results.push(roll);
+            if (roll ===6)
+               break;
+
+    }
+        let html = "<ul>";
+        for (let i = 0; i < results.length; i++) {
+            html += `<li>${results[i]}</li>`;
+        }
+        html += "</ul>";
+         document.querySelector('#result').innerHTML = html;
+         }
+
+         six()
+
+
+
+
+</script>
+
+</body>
+</html>

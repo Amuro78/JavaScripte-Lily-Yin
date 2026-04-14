@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    let numbers=[]
+    while(true){
+      let num = parseInt(prompt("Please enter the number(enter the same number to end) "))
+
+      if (isNaN(num))
+        alert("Please enter valid number!")
+
+      if (numbers.includes(num)){
+          console.log(`The numbers previously entered.`)
+          break
+      }
+
+
+      numbers.push(num);
+      numbers.sort((a ,b)=> a - b)
+     console.log("Result: ");
+    for (let i=0; i<numbers.length; i++){
+      console.log(numbers[i]);
+    }
+    }
+
+
+
+
+</script>
+</body>
+</html>

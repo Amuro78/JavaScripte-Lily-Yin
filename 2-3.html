@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    names=[]
+    for (let i=0; i<=5 ; i++){
+        names[i] = prompt("Please enter the name:")
+        names.sort();
+        names.reverse();
+
+        let html = "<ul>";
+        for (let i=0; i< names.length; i++){
+            html +="<li>"+ names[i] + "</li>";
+        }
+        html +="</ul>";
+        document.getElementById("result").innerHTML = html;
+    }
+
+
+</script>
+</body>
+</html>
