@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chucknorris</title>
+</head>
+<body>
+<form id="SearchForm">
+    <input type="text" id="query" placeholder="Enter the keywords">
+    <input type="submit" value="Search">
+</form>
+
+<div id="results"></div>
+
+<script>
+    const form = document.getElementById('SearchForm');
+    const results = document.getElementById('results');
+
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const queryInput = document.getElementById('query');
+        const value_from_input = queryInput.value.trim();
+
+        if (!value_from_input) {
+            results.innerHTML = `<p>Please enter a keyword!</p>`;
+            return;
+        }
+
+        try {
+            const apiUrl = `https://api.chucknorris.io/jokes/search?query=${value_from_input}`;
+
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+
+            if (!data.result || data.result.length === 0) {
+                results.innerHTML = `<p> No jokes found for "${value_from_input}". </p>`;
+                return;
+            }
+            let html = `<p>Found ${data.total} jokes about "${value_from_input}":</p>`;
+            html += '<div id="jokes-list">';
+
+            for (let i = 0; i < data.result.length; i++) {
+                const joke = data.result[i];
+                html += `
+                    <article>
+                        <p>${joke.value}</p>
+                    </article>
+                    <hr>
+                `;
+            }
+            html += '</div>';
+
+            results.innerHTML = html;
+
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    });
+</script>
+
+</body>
+</html>
